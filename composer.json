@@ -4,11 +4,10 @@
     "version": "1.0.0",
     "require": {
         "waavi/translation": "^2.2",
-        "laravel/framework": "~5.4"
+        "laravel/framework": "~5.4",
+        "bereczkybalazs/laravel-waavi-translate-admin": "dev-master"
     },
-    "prefer-stable" : true,
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Bereczky Balázs",
