@@ -1,6 +1,6 @@
 {
     "name": "bereczkybalazs/laravel-waavi-translate-admin",
-    "type": "composer-plugin",
+    "type": "package",
     "require": {
         "waavi/translation": "^2.2",
         "laravel/framework": "~5.4"
