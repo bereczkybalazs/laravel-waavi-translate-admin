@@ -1,6 +1,6 @@
 # laravel-waavi-translate-admin
 
-installion
+## installion
 ```
 composer require bereczkybalazs/laravel-waavi-translate-admin
 ```
