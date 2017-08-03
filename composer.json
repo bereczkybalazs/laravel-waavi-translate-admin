@@ -5,7 +5,9 @@
         "waavi/translation": "^2.2",
         "laravel/framework": "~5.4"
     },
-    "version": "0.0.1",
+    "package": {
+        "version": "0.0.1",
+    },
     "license": "MIT",
     "minimum-stability": "dev",
     "authors": [
