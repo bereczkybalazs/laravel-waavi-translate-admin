@@ -1,3 +1,3 @@
 <?php
-Route::get('/translate-admin', '\BereczkyBalazs\WaaviTranslateAdmin\Controllers\TranslateAdminController@index');
+Route::resource('translate-admin', '\BereczkyBalazs\WaaviTranslateAdmin\Controllers\TranslateAdminController');
 
