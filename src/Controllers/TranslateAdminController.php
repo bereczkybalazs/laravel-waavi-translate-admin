@@ -8,6 +8,6 @@ class TranslateAdminController extends Controller
 {
     public function index()
     {
-        return view('translate_admin::admin', ['test' => 213213213]);
+        return view('vendor.translate_admin.admin', ['test' => 213213213]);
     }
 }

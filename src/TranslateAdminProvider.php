@@ -14,7 +14,11 @@ class TranslateAdminProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
-        $this->loadViewsFrom(__DIR__.'/views', 'translate_admin');
+        //$this->loadViewsFrom(__DIR__.'/views', 'translate_admin');
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views/vendor/translate_admin'),
+        ]);
+
     }
 
     /**
