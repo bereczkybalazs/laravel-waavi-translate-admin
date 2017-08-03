@@ -1,0 +1,1 @@
+# laravel-waavi-translate-admin
