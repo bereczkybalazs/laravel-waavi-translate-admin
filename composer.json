@@ -4,8 +4,7 @@
     "version": "1.0.0",
     "require": {
         "waavi/translation": "^2.2",
-        "laravel/framework": "~5.4",
-        "bereczkybalazs/laravel-waavi-translate-admin": "dev-master"
+        "laravel/framework": "~5.4"
     },
     "license": "MIT",
     "authors": [
