@@ -15,6 +15,6 @@
     @yield('translate_admin')
 </div>
 <div class="col-md-2"></div>
-
+  @stack('scripts')
 </body>
 </html>

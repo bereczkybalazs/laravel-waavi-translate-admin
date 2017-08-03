@@ -17,6 +17,7 @@ class TranslateAdminProvider extends ServiceProvider
         //$this->loadViewsFrom(__DIR__.'/views', 'translate_admin');
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/vendor/translate_admin'),
+            __DIR__.'/resources' => base_path('public'),
         ]);
 
     }
