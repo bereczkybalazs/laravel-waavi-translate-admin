@@ -1,0 +1,15 @@
+{
+    "name": "bereczkybalazs/laravel-waavi-translate-admin",
+    "type": "composer-plugin",
+    "require": {
+        "waavi/translation": "^2.2",
+        "laravel/framework": "~5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bereczky Balázs",
+            "email": "bereczkybalazs1@gmail.com"
+        }
+    ]
+}
