@@ -31,8 +31,8 @@ class TranslateAdminProvider extends ServiceProvider
     {
         $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface::class, \BereczkyBalazs\WaaviTranslateAdmin\Transformers\TranslateRequestDataTransformer::class);
         $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface::class, \BereczkyBalazs\WaaviTranslateAdmin\Transformers\TranslateResponseDataTransformer::class);
-        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\TranslationRepositoryInterface::class, \BereczkyBalazs\BereczkyBalazs\WaaviTranslateAdmin\Repositories\TranslationRepository::class);
-        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\TranslationRepositoryInterface::class, \BereczkyBalazs\BereczkyBalazs\WaaviTranslateAdmin\Repositories\TranslationRepository::class);
+        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\TranslationRepositoryInterface::class, \BereczkyBalazs\WaaviTranslateAdmin\Repositories\TranslationRepository::class);
+        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\LanguagesRepositoryInterface::class, \BereczkyBalazs\WaaviTranslateAdmin\Repositories\LanguagesRepository::class);
         $this->app->make('BereczkyBalazs\WaaviTranslateAdmin\Controllers\TranslateAdminController');
     }
 }

@@ -9,19 +9,10 @@
 namespace BereczkyBalazs\WaaviTranslateAdmin\Transformers;
 
 
+use BereczkyBalazs\WaaviTranslateAdmin\Abstracts\ResponseDataTransformer;
 use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface;
-use Illuminate\Http\Response;
 
-class TranslateResponseDataTransformer implements ResponseDataTransformerInterface
+class TranslateResponseDataTransformer extends ResponseDataTransformer implements ResponseDataTransformerInterface
 {
 
-    public function fill(Response $response)
-    {
-        // TODO: Implement fill() method.
-    }
-
-    public function transform()
-    {
-        // TODO: Implement transform() method.
-    }
 }

@@ -3,10 +3,11 @@
 namespace BereczkyBalazs\WaaviTranslateAdmin\Controllers;
 
 use App\Http\Controllers\Controller;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\LanguagesRepositoryInterface;
 use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface;
 use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\TranslationRepositoryInterface;
 use Illuminate\Http\Request;
-use Waavi\Translation\Models\Translation;
 
 class TranslateAdminController extends Controller
 {
@@ -14,11 +15,15 @@ class TranslateAdminController extends Controller
 
     public function __construct(
         RequestDataTransformerInterface $requestTransformer,
-        ResponseDataTransformerInterface $responseTransformer
+        ResponseDataTransformerInterface $responseTransformer,
+        LanguagesRepositoryInterface $languagesRepository,
+        TranslationRepositoryInterface $translationRepository
     )
     {
         $this->requestTransformer = $requestTransformer;
         $this->responseTransformer = $responseTransformer;
+        $this->languagesRepository = $languagesRepository;
+        $this->translationRepository = $translationRepository;
     }
 
     public function view()
@@ -28,7 +33,11 @@ class TranslateAdminController extends Controller
 
     public function index()
     {
-        return response()->json(Translation::orderBy('item', 'ASC')->get()->groupBy('group'));
+        $data = $this->responseTransformer->init([
+            ['name' => 'languages', 'data' => $this->languagesRepository->show()],
+            ['name' => 'translations', 'data' => $this->translationRepository->show()],
+        ]);
+        return response()->json($data);
     }
 
     public function store(Request $request)
