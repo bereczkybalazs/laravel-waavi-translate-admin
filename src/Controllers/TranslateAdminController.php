@@ -15,9 +15,14 @@ class TranslateAdminController extends Controller
         $this->transformer = $transformer;
     }
 
-    public function index()
+    public function view()
     {
         return view('vendor.translate_admin.admin', ['test' => 213213213]);
+    }
+
+    public function index()
+    {
+        
     }
 
     public function store(Request $request)
