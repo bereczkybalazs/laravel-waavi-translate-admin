@@ -4,15 +4,18 @@ namespace BereczkyBalazs\WaaviTranslateAdmin\Controllers;
 
 use App\Http\Controllers\Controller;
 use BereczkyBalazs\Interfaces\RequestDataTransformerInterface;
+use BereczkyBalazs\Interfaces\ResponseDataTransformerInterface;
 use Illuminate\Http\Request;
+use Waavi\Translation\Models\Translation;
 
 class TranslateAdminController extends Controller
 {
-    protected $transformer;
+    protected $requestTransformer;
 
-    public function __construct(RequestDataTransformerInterface $transformer)
+    public function __construct(RequestDataTransformerInterface $requestTransformer, ResponseDataTransformerInterface $responseTransformer)
     {
-        $this->transformer = $transformer;
+        $this->requestTransformer = $requestTransformer;
+        $this->responseTransformer = $responseTransformer;
     }
 
     public function view()
@@ -22,7 +25,7 @@ class TranslateAdminController extends Controller
 
     public function index()
     {
-
+        return response()->json(Translation::orderBy('item', 'ASC')->get()->groupBy('group'));
     }
 
     public function store(Request $request)
