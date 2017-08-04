@@ -1,6 +1,6 @@
 <?php
 
-namespace BereczkyBalazs\Interfaces;
+namespace BereczkyBalazs\WaaviTranslateAdmin\Interfaces;
 
 use Illuminate\Http\Request;
 

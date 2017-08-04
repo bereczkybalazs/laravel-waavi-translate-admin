@@ -1,8 +1,8 @@
 <?php
 
-namespace BereczkyBalazs\Abstracts;
+namespace BereczkyBalazs\WaaviTranslateAdmin\Abstracts;
 
-use BereczkyBalazs\Interfaces\RequestDataTransformerInterface;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface;
 use Illuminate\Http\Request;
 
 abstract class RequestDataTransformer implements RequestDataTransformerInterface

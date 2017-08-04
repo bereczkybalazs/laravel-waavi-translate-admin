@@ -29,8 +29,10 @@ class TranslateAdminProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(\BereczkyBalazs\Interfaces\RequestDataTransformerInterface::class, \BereczkyBalazs\Transformers\TranslateRequestDataTransformer::class);
-        $this->app->bind(\BereczkyBalazs\Interfaces\ResponseDataTransformerInterface::class, \BereczkyBalazs\Transformers\TranslateResponseDataTransformer::class);
+        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface::class, \BereczkyBalazs\WaaviTranslateAdmin\Transformers\TranslateRequestDataTransformer::class);
+        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface::class, \BereczkyBalazs\WaaviTranslateAdmin\Transformers\TranslateResponseDataTransformer::class);
+        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\TranslationRepositoryInterface::class, \BereczkyBalazs\BereczkyBalazs\WaaviTranslateAdmin\Repositories\TranslationRepository::class);
+        $this->app->bind(\BereczkyBalazs\WaaviTranslateAdmin\Interfaces\TranslationRepositoryInterface::class, \BereczkyBalazs\BereczkyBalazs\WaaviTranslateAdmin\Repositories\TranslationRepository::class);
         $this->app->make('BereczkyBalazs\WaaviTranslateAdmin\Controllers\TranslateAdminController');
     }
 }

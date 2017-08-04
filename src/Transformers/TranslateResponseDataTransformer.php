@@ -6,10 +6,10 @@
  * Time: 13:13
  */
 
-namespace BereczkyBalazs\Transformers;
+namespace BereczkyBalazs\WaaviTranslateAdmin\Transformers;
 
 
-use BereczkyBalazs\Interfaces\ResponseDataTransformerInterface;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface;
 use Illuminate\Http\Response;
 
 class TranslateResponseDataTransformer implements ResponseDataTransformerInterface

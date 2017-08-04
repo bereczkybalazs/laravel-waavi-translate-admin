@@ -3,8 +3,8 @@
 namespace BereczkyBalazs\WaaviTranslateAdmin\Controllers;
 
 use App\Http\Controllers\Controller;
-use BereczkyBalazs\Interfaces\RequestDataTransformerInterface;
-use BereczkyBalazs\Interfaces\ResponseDataTransformerInterface;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface;
 use Illuminate\Http\Request;
 use Waavi\Translation\Models\Translation;
 
@@ -12,7 +12,10 @@ class TranslateAdminController extends Controller
 {
     protected $requestTransformer;
 
-    public function __construct(RequestDataTransformerInterface $requestTransformer, ResponseDataTransformerInterface $responseTransformer)
+    public function __construct(
+        RequestDataTransformerInterface $requestTransformer,
+        ResponseDataTransformerInterface $responseTransformer
+    )
     {
         $this->requestTransformer = $requestTransformer;
         $this->responseTransformer = $responseTransformer;

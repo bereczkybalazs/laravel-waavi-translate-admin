@@ -1,9 +1,9 @@
 <?php
 
-namespace BereczkyBalazs\Transformers;
+namespace BereczkyBalazs\WaaviTranslateAdmin\Transformers;
 
-use BereczkyBalazs\Abstracts\RequestDataTransformer;
-use BereczkyBalazs\Interfaces\RequestDataTransformerInterface;
+use BereczkyBalazs\WaaviTranslateAdmin\Abstracts\RequestDataTransformer;
+use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface;
 
 class TranslateRequestDataTransformer extends RequestDataTransformer implements RequestDataTransformerInterface
 {

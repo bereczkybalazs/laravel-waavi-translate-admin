@@ -1,7 +1,6 @@
 <?php
 
-namespace BereczkyBalazs\Interfaces;
-
+namespace BereczkyBalazs\WaaviTranslateAdmin\Interfaces;
 
 interface LanguagesRepositoryInterface
 {
