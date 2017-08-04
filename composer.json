@@ -12,6 +12,11 @@
             "url": "https://github.com/bereczkybalazs/laravel-waavi-translate-admin.git"
         }
     ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
     "license": "MIT",
     "authors": [
         {
