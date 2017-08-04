@@ -1,0 +1,67 @@
+.translate-admin {
+    background: #fff;
+}
+
+.translate-admin h1 {
+    font-size: 24px;
+    margin: 10px 0px;
+}
+
+.translate-admin h2 {
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.border-bottom-label {
+    border-bottom: 1px solid #ddd;
+}
+
+.separated-label {
+    border-right: 1px solid #ddd;
+}
+
+.table-header-label {
+    height: 96px;
+    margin: 0px -15px;
+    padding: 15px;
+}
+
+.table-header-label h2 {
+    margin: 0px 0px 10px 0px;
+}
+
+.table-content-label {
+    margin: 0px -15px;
+    padding: 15px;
+    height: 500px;
+}
+
+.translation-groups {
+    height: 500px;
+}
+
+.translation-group {
+    cursor: pointer;
+    padding: 15px 10px;
+    -webkit-transition: background-color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out;
+    -o-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+}
+
+.translation-group:hover {
+    background: #eee;
+}
+
+.translation-group.active {
+    background: #ddd;
+}
+
+.table-footer {
+    text-align: right;
+    padding: 15px;
+}
+
+.scroll {
+    overflow-y: scroll;
+}
