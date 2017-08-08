@@ -21,3 +21,9 @@ Add seeder to database/seeds/DatabaseSeeder.php
   $this->call(LocaleCodesSeeder::class);
   ...
 ```
+Run seeder and fill tables for waavi
+```
+php artisan migrate
+php artisan db:seed
+php artisan translator:load
+```
