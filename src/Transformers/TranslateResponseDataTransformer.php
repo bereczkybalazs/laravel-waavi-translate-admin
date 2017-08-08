@@ -32,9 +32,9 @@ class TranslateResponseDataTransformer implements ResponseDataTransformerInterfa
     {
         if (count($this->unformattedTranslates) > 0) {
             $this->response->translates = new \stdClass();
-            $groups = new \stdClass();
+            $groups = [];
             foreach ($this->unformattedTranslates->groupBy('group') as $key => $group) {
-                $groups->{$key} = $group->groupBy('locale');
+                $groups[] = json_decode(json_encode(['name' => $key, 'data' => $group->groupBy('locale')]));
             }
             $this->response->translates->groups = $groups;
         }

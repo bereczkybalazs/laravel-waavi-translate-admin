@@ -22,7 +22,7 @@ class TranslateAdminController extends Controller
 
     public function view()
     {
-        return view('vendor.translate_admin.admin');
+        return view('vendor.translate_admin.admin', ['data' => $this->responseTransformer->transform()->response]);
     }
 
     public function index()
