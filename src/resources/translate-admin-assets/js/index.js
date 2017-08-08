@@ -5,7 +5,7 @@ var translate = function () {
 
 translate.prototype.initDom = function () {
     var that = this;
-    $('.translation-group').click(function(){
+    $('.translation-group').click(function (){
         $('.translation-group').removeClass('active');
         $(this).addClass('active');
         that.translate = JSON.parse($(this).attr('data-translate'));
@@ -13,6 +13,9 @@ translate.prototype.initDom = function () {
     });
     $('.language-switch-input').on('change', function () {
         that.renderInputs();
+    });
+    $('#translateSave').click(function () {
+        that.store();
     });
 }
 
@@ -60,6 +63,18 @@ translate.prototype.updateTranslateTextByIdAndLocale = function (text, id, local
         }
     }
     $('.translation-group.active').first().attr('data-translate', JSON.stringify(this.translate));
+}
+
+translate.prototype.store = function () {
+    var that = this;
+    $.ajax({
+        url: window.location + '/resource',
+        method: 'post',
+        data: {translate: that.translate},
+        success: function (data) {
+            console.log(data);
+        }
+    });
 }
 
 new translate();

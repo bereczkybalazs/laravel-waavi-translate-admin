@@ -9,11 +9,18 @@ class TranslateRequestDataTransformer implements RequestDataTransformerInterface
 
     public function fill($data)
     {
-        // TODO: Implement fill() method.
+        if (gettype($data) == 'array' && count($data) > 0) {
+
+        }
     }
 
     public function transform()
     {
         // TODO: Implement transform() method.
+    }
+
+    public function store()
+    {
+        // TODO: Implement store() method.
     }
 }

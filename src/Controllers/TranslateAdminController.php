@@ -5,7 +5,7 @@ namespace BereczkyBalazs\WaaviTranslateAdmin\Controllers;
 use App\Http\Controllers\Controller;
 use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface;
 use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\ResponseDataTransformerInterface;
-use Illuminate\Http\Request;
+use BereczkyBalazs\WaaviTranslateAdmin\Requests\TranslateRequest;
 
 class TranslateAdminController extends Controller
 {
@@ -30,9 +30,8 @@ class TranslateAdminController extends Controller
         return response()->json($this->responseTransformer->transform()->response);
     }
 
-    public function store(Request $request)
+    public function store(TranslateRequest $request)
     {
-        $data = $this->transformer->requestToArray($request);
-        return $data;
+        return response()->json($this->requestTransformer->fill($request->all())->transform()->store());
     }
 }

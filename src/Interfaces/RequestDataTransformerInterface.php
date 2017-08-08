@@ -6,4 +6,5 @@ interface RequestDataTransformerInterface
 {
     public function fill($data);
     public function transform();
+    public function store();
 }

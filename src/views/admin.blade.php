@@ -47,7 +47,7 @@
         </div>
         <div class="row">
             <div class="table-footer">
-                <button class="btn btn-success">Save</button>
+                <button class="btn btn-success" id="translateSave">Save</button>
             </div>
         </div>
     </div>
