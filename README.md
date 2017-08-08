@@ -13,15 +13,19 @@ Register service provider in config/app.php
 ```
 Replace the following entry in config/app.php
 ```
+'providers' => [
   ...
 	Illuminate\Translation\TranslationServiceProvider::class,
   ...
+];
 ```
 with:
 ```
+'providers' => [
   ...
   Waavi\Translation\TranslationServiceProvider::class,
   ...
+];
 ```
 Publish views
 ```
