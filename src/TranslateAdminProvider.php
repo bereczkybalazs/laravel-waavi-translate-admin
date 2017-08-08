@@ -18,8 +18,8 @@ class TranslateAdminProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/vendor/translate_admin'),
             __DIR__.'/resources' => base_path('public'),
-            __DIR__.'/seeds' => base_path('database/seeds')
-        ]);
+            __DIR__.'/database' => base_path('database')
+        ], 'bereczkybalazs_translate');
 
     }
 
