@@ -4,5 +4,5 @@ namespace BereczkyBalazs\WaaviTranslateAdmin\Interfaces;
 
 interface LanguagesRepositoryInterface
 {
-    public function show();
+    public static function show();
 }

@@ -7,7 +7,7 @@ use Waavi\Translation\Models\Language;
 
 class LanguagesRepository implements LanguagesRepositoryInterface
 {
-    public function show()
+    public static function show()
     {
         return Language::all();
     }

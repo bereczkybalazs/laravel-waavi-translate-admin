@@ -27,8 +27,7 @@ class TranslateAdminController extends Controller
 
     public function index()
     {
-        $data = $this->responseTransformer->transform();
-        return response()->json($data);
+        return response()->json($this->responseTransformer->transform()->response->translates);
     }
 
     public function store(Request $request)
