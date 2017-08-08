@@ -2,9 +2,8 @@
 
 namespace BereczkyBalazs\WaaviTranslateAdmin\Interfaces;
 
-use Illuminate\Http\Request;
-
 interface RequestDataTransformerInterface
 {
-    public function requestToArray(Request $inputRequest);
+    public function fill($data);
+    public function transform();
 }

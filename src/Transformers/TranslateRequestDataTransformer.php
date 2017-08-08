@@ -2,10 +2,18 @@
 
 namespace BereczkyBalazs\WaaviTranslateAdmin\Transformers;
 
-use BereczkyBalazs\WaaviTranslateAdmin\Abstracts\RequestDataTransformer;
 use BereczkyBalazs\WaaviTranslateAdmin\Interfaces\RequestDataTransformerInterface;
 
-class TranslateRequestDataTransformer extends RequestDataTransformer implements RequestDataTransformerInterface
+class TranslateRequestDataTransformer implements RequestDataTransformerInterface
 {
 
+    public function fill($data)
+    {
+        // TODO: Implement fill() method.
+    }
+
+    public function transform()
+    {
+        // TODO: Implement transform() method.
+    }
 }
