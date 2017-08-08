@@ -15,7 +15,7 @@ Replace the following entry in config/app.php
 ```
 'providers' => [
   ...
-	Illuminate\Translation\TranslationServiceProvider::class,
+  Illuminate\Translation\TranslationServiceProvider::class,
   ...
 ];
 ```
