@@ -15,3 +15,9 @@ Publish views
 ```
 php artisan vendor:publish
 ```
+Add seeder to database/seeds/DatabaseSeeder.php
+```
+  ...
+  $this->call(LocaleCodesSeeder::class);
+  ...
+```
