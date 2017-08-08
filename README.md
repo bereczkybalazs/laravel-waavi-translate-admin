@@ -29,7 +29,7 @@ with:
 ```
 Publish views
 ```
-php artisan vendor:publish
+php artisan vendor:publish --tag=bereczkybalazs_translate
 ```
 Add seeder to database/seeds/DatabaseSeeder.php
 ```
