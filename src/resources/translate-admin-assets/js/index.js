@@ -21,8 +21,12 @@ translate.prototype.renderInputs = function () {
     this.renderById('translateLanguageTwo');
     var that = this;
     $('.translate-input-data').on('keyup', function () {
-        console.log($(this).attr('data-locale'));
-        that.updateTranslateTextByIdAndLocale()
+        that.updateTranslateTextByIdAndLocale(
+            $(this).val(),
+            $(this).attr('data-id'),
+            $(this).attr('data-locale')
+        );
+        $("input[data-id='" + $(this).attr('data-id')+ "']").val($(this).val());
     });
 }
 
@@ -41,13 +45,21 @@ translate.prototype.addInput = function (listId, item) {
 
     $('#' + listId).append(
         '<div class="translate-input form-group">' +
-            '<input type="text" data-locale="' + item.locale + '" class="form-control translate-input-data" name="' + item.id + '" value="' + item.text + '">' +
+            '<input type="text" ' +
+                ' data-locale="' + item.locale + '" ' +
+                ' class="form-control translate-input-data" '+
+                ' data-id="' + item.id + '" value="' + item.text + '">' +
         '</div>'
     );
 }
 
 translate.prototype.updateTranslateTextByIdAndLocale = function (text, id, locale) {
-    console.log(this.translate);
+    for (var i in this.translate[locale]) {
+        if (this.translate[locale][i].id == id) {
+            this.translate[locale][i].text = text;
+        }
+    }
+    $('.translation-group.active').first().attr('data-translate', JSON.stringify(this.translate));
 }
 
 new translate();
