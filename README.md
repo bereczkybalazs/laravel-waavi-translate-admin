@@ -11,6 +11,18 @@ Register service provider in config/app.php
   ...
 ];
 ```
+Replace the following entry in config/app.php
+```
+  ...
+	Illuminate\Translation\TranslationServiceProvider::class,
+  ...
+```
+with:
+```
+  ...
+  Waavi\Translation\TranslationServiceProvider::class,
+  ...
+```
 Publish views
 ```
 php artisan vendor:publish
