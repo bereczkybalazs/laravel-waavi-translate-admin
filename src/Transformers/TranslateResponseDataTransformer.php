@@ -11,6 +11,7 @@ class TranslateResponseDataTransformer implements ResponseDataTransformerInterfa
     public $response;
     protected $languagesRepository;
     protected $translateRepository;
+    protected $unformattedTranslates;
 
     public function __construct()
     {
@@ -21,18 +22,18 @@ class TranslateResponseDataTransformer implements ResponseDataTransformerInterfa
     public function transform()
     {
         $this->response = new \stdClass();
-        $this->response->languages = $this->languagesRepository->show();
-        $this->response->unformattedTranslates = $this->translateRepository->show();
+        $this->response->locales = $this->languagesRepository->show();
+        $this->unformattedTranslates = $this->translateRepository->show();
         $this->transformTranslates();
         return $this;
     }
 
     protected function transformTranslates()
     {
-        if (isset($this->response->unformattedTranslates)) {
+        if (count($this->unformattedTranslates) > 0) {
             $this->response->translates = new \stdClass();
             $groups = new \stdClass();
-            foreach ($this->response->unformattedTranslates->groupBy('group') as $key => $group) {
+            foreach ($this->unformattedTranslates->groupBy('group') as $key => $group) {
                 $groups->{$key} = $group->groupBy('locale');
             }
             $this->response->translates->groups = $groups;
