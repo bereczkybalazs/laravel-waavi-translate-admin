@@ -8,6 +8,7 @@ translate.prototype.initDom = function () {
     $('.translation-group').click(function (){
         $('.translation-group').removeClass('active');
         $(this).addClass('active');
+        $('#translateSave').prop('disabled', false);
         that.translate = JSON.parse($(this).attr('data-translate'));
         that.renderInputs();
     });
@@ -71,8 +72,15 @@ translate.prototype.store = function () {
         url: window.location + '/resource',
         method: 'post',
         data: {translate: that.translate},
-        success: function (data) {
-            console.log(data);
+        success: function () {
+            $('#translateModalLabel').html('Success');
+            $('#translateModalBody').html('Data saved successfully!');
+            $('#translateModalContainer').modal('show');
+        },
+        error: function () {
+            $('#translateModalLabel').html('Error');
+            $('#translateModalBody').html('There was an error while saving, please try again.');
+            $('#translateModalContainer').modal('show');
         }
     });
 }
