@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class LocaleCodesSeeder extends Seeder
+class TranslateAdminLocaleCodesSeeder extends Seeder
 {
     /**
      * Run the database seeds.

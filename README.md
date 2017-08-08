@@ -34,7 +34,7 @@ php artisan vendor:publish
 Add seeder to database/seeds/DatabaseSeeder.php
 ```
   ...
-  $this->call(LocaleCodesSeeder::class);
+  $this->call(TranslateAdminLocaleCodesSeeder::class);
   ...
 ```
 Run seeder and fill tables for waavi
