@@ -31,14 +31,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="translate-inputs scroll row table-content-label border-bottom-label" id="translateListOne">
-                    <div class="translate-input form-group">
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="translate-input form-group">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
+                <div class="translate-inputs scroll row table-content-label border-bottom-label" id="translateListOne"></div>
             </div>
             <div class="col-md-4">
                 <div class="table-header-label border-bottom-label">
@@ -49,14 +42,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="translate-inputs scroll row table-content-label border-bottom-label" id="translateListTwo">
-                    <div class="translate-input form-group">
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="translate-input form-group">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
+                <div class="translate-inputs scroll row table-content-label border-bottom-label" id="translateListTwo"></div>
             </div>
         </div>
         <div class="row">

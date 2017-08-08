@@ -13,12 +13,17 @@ translate.prototype.initDom = function () {
     });
     $('.language-switch-input').on('change', function () {
         that.renderInputs();
-    })
+    });
 }
 
 translate.prototype.renderInputs = function () {
     this.renderById('translateLanguageOne');
     this.renderById('translateLanguageTwo');
+    var that = this;
+    $('.translate-input-data').on('keyup', function () {
+        console.log($(this).attr('data-locale'));
+        that.updateTranslateTextByIdAndLocale()
+    });
 }
 
 translate.prototype.renderById = function (id) {
@@ -28,17 +33,21 @@ translate.prototype.renderById = function (id) {
     $('#' + listId).html('');
     for (var i in this.translate[locale]) {
         var item = this.translate[locale][i];
-        this.addInput(listId, item.id, item.text)
+        this.addInput(listId, item)
     }
 }
 
-translate.prototype.addInput = function (listId, name, value) {
+translate.prototype.addInput = function (listId, item) {
 
     $('#' + listId).append(
         '<div class="translate-input form-group">' +
-            '<input type="text" class="form-control" name="' + name + '" value="' + value + '">' +
+            '<input type="text" data-locale="' + item.locale + '" class="form-control translate-input-data" name="' + item.id + '" value="' + item.text + '">' +
         '</div>'
     );
+}
+
+translate.prototype.updateTranslateTextByIdAndLocale = function (text, id, locale) {
+    console.log(this.translate);
 }
 
 new translate();
