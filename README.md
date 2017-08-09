@@ -1,7 +1,7 @@
 ## Installion
 Require package
 ```
-composer require bereczkybalazs/laravel-waavi-translate-admin
+composer require bereczkybalazs/laravel-waavi-translate-admin=dev-master
 ```
 Register service provider in config/app.php
 ```
