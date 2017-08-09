@@ -16,6 +16,9 @@
     "autoload": {
         "classmap": [
             "src/"
+        ],
+        "exclude-from-classmap": [
+            "src/database/"
         ]
     },
     "license": "MIT",
