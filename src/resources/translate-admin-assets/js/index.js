@@ -18,6 +18,9 @@ translate.prototype.initDom = function () {
     $('#translateSave').click(function () {
         that.store();
     });
+    $('.table-content-label').scroll(function () {
+        $('.table-content-label').scrollTop($(this).scrollTop());
+    });
 }
 
 translate.prototype.renderInputs = function () {
