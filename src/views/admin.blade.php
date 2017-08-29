@@ -15,7 +15,8 @@
                 </div>
                 <div class="translation-groups scroll row border-bottom-label">
                     @foreach($data->translates->groups as $group)
-                        <div class="translation-group border-bottom-label" data-translate="{{json_encode($group->data)}}">
+                        <div class="translation-group border-bottom-label" data-translate="{{json_encode($group->data)}}"
+                            data-percents="{{json_encode($group->percent)}}">
                             {{$group->name}}
                         </div>
                     @endforeach
@@ -25,7 +26,7 @@
                 <div class="table-header-label border-bottom-label">
                     <h2>Select language</h2>
                     <select name="languageOne" class="form-control language-switch-input" id="translateLanguageOne"
-                            data-render-list="translateListOne">
+                            data-render-list="translateListOne" data-percent="0">
                         @foreach($data->locales as $locale)
                             <option value="{{$locale->locale}}">{{$locale->name}}</option>
                         @endforeach
@@ -36,7 +37,8 @@
             <div class="col-md-4">
                 <div class="table-header-label border-bottom-label">
                     <h2>Select language</h2>
-                    <select name="languageTwo" class="form-control language-switch-input" id="translateLanguageTwo" data-render-list="translateListTwo">
+                    <select name="languageTwo" class="form-control language-switch-input" id="translateLanguageTwo"
+                        data-render-list="translateListTwo" data-percent="0">
                         @foreach($data->locales as $locale)
                             <option value="{{$locale->locale}}">{{$locale->name}}</option>
                         @endforeach
