@@ -28,15 +28,36 @@ class TranslateResponseDataTransformer implements ResponseDataTransformerInterfa
         return $this;
     }
 
+    
     protected function transformTranslates()
     {
         if (count($this->unformattedTranslates) > 0) {
             $this->response->translates = new \stdClass();
             $groups = [];
             foreach ($this->unformattedTranslates->groupBy('group') as $key => $group) {
-                $groups[] = json_decode(json_encode(['name' => $key, 'data' => $group->groupBy('locale')]));
+                $data = $group->groupBy('locale');
+                $groups[] = json_decode(json_encode([
+                    'name' => $key,
+                    'data' => $data,
+                    'percent' => $this->getPercentsByGroup($data)
+                ]));
             }
             $this->response->translates->groups = $groups;
         }
+    }
+
+    protected function getPercentsByGroup($data)
+    {
+        $percents = new \stdClass();
+        foreach ($data as $locale => $localizedData) {
+            $progress = 0;
+            foreach ($localizedData as $data) {
+                if ($data->text != '') {
+                    $progress++;
+                }
+            }
+            $percents->{$locale} = number_format(($progress / count($localizedData)) * 100, 2);
+        }
+        return $percents;
     }
 }
