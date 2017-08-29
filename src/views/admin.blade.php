@@ -28,7 +28,7 @@
                     <select name="languageOne" class="form-control language-switch-input" id="translateLanguageOne"
                             data-render-list="translateListOne" data-percent="0">
                         @foreach($data->locales as $locale)
-                            <option value="{{$locale->locale}}">{{$locale->name}}</option>
+                            <option value="{{$locale->locale}}" data-original="{{$locale->name}}">{{$locale->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -40,7 +40,7 @@
                     <select name="languageTwo" class="form-control language-switch-input" id="translateLanguageTwo"
                         data-render-list="translateListTwo" data-percent="0">
                         @foreach($data->locales as $locale)
-                            <option value="{{$locale->locale}}">{{$locale->name}}</option>
+                            <option value="{{$locale->locale}}" data-original="{{$locale->name}}">{{$locale->name}}</option>
                         @endforeach
                     </select>
                 </div>
