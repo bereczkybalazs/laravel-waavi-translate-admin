@@ -28,8 +28,10 @@ class TranslationRepository implements TranslationRepositoryInterface
 
     public function storeTextById($id, $text)
     {
-        $translation = $this->findById($id);
-        $translation->text = $text;
-        $translation->save();
+        if ($text != null) {
+            $translation = $this->findById($id);
+            $translation->text = $text;
+            $translation->save();
+        }
     }
 }
