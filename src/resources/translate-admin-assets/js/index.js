@@ -1,5 +1,7 @@
 var translate = function () {
-    var translate = {};
+    this.translate = {};
+    this.percents = {};
+    this.locales = {};
     this.initDom();
 }
 
@@ -10,6 +12,9 @@ translate.prototype.initDom = function () {
         $(this).addClass('active');
         $('#translateSave').prop('disabled', false);
         that.translate = JSON.parse($(this).attr('data-translate'));
+        that.percents = JSON.parse($(this).attr('data-percents'));
+        that.locales = JSON.parse($(this).attr('data-locales'));
+        that.renderSelects();
         that.renderInputs();
     });
     $('.language-switch-input').on('change', function () {
@@ -21,6 +26,27 @@ translate.prototype.initDom = function () {
     $('.table-content-label').scroll(function () {
         $('.table-content-label').scrollTop($(this).scrollTop());
     });
+}
+
+translate.prototype.renderSelects = function () {
+    for (var i in this.percents) {
+        var domKey = '.language-switch-input > option[value=' + i + ']';
+        var domValue = $(domKey).attr('data-original');
+        $(domKey).html(domValue + ' (' + this.percents[i] + '%)');
+    }
+}
+
+translate.prototype.reCountPercents = function () {
+    for (var i in this.translate) {
+        var progress = 0;
+        for (var j in this.translate[i]) {
+            if (this.translate[i][j].text != '') {
+                progress++;
+            }
+        }
+        this.percents[i] = ((progress / this.translate[i].length) * 100).toFixed(2);
+    }
+    this.renderSelects();
 }
 
 translate.prototype.renderInputs = function () {
@@ -79,6 +105,7 @@ translate.prototype.store = function () {
             $('#translateModalLabel').html('Success');
             $('#translateModalBody').html('Data saved successfully!');
             $('#translateModalContainer').modal('show');
+            that.reCountPercents();
         },
         error: function () {
             $('#translateModalLabel').html('Error');
