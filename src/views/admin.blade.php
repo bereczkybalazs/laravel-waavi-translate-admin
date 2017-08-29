@@ -16,7 +16,7 @@
                 <div class="translation-groups scroll row border-bottom-label">
                     @foreach($data->translates->groups as $group)
                         <div class="translation-group border-bottom-label" data-translate="{{json_encode($group->data)}}"
-                            data-percents="{{json_encode($group->percent)}}">
+                            data-percents="{{json_encode($group->percent)}}" data-locales="{{json_encode($data->locales)}}">
                             {{$group->name}}
                         </div>
                     @endforeach
