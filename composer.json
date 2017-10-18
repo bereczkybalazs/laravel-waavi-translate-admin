@@ -1,7 +1,7 @@
 {
     "name": "bereczkybalazs/laravel-waavi-translate-admin",
     "type": "package",
-    "version": "8.3.1",
+    "version": "8.3.2.1",
     "require": {
         "waavi/translation": "2.2.x",
         "laravel/framework": "~5.4"
