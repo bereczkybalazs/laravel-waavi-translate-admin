@@ -3,6 +3,36 @@ var translate = function () {
     this.percents = {};
     this.locales = {};
     this.initDom();
+    this.goToParameter();
+}
+
+translate.prototype.goToParameter = function () {
+    var urlParams = this.URLToArray(window.location.href);
+    if (urlParams.hasOwnProperty('group') && urlParams.hasOwnProperty('name')) {
+        setTimeout(function () {
+            $('#group_' + urlParams.group).click();
+            setTimeout(function () {
+                $('#translateListOne').animate({
+                        scrollTop: $('#item_translateListOne_' + urlParams.name).offset().top
+                }, 100);
+                setTimeout(function () {
+                    $('#item_translateListOne_' + urlParams.name).focus();
+                }, 100);
+            }, 100);
+        }, 200);
+    }
+}
+
+translate.prototype.URLToArray = function(url) {
+    var request = {};
+    var pairs = url.substring(url.indexOf('?') + 1).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        if (!pairs[i])
+            continue;
+        var pair = pairs[i].split('=');
+        request[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+    }
+    return request;
 }
 
 translate.prototype.initDom = function () {
@@ -79,6 +109,7 @@ translate.prototype.addInput = function (listId, item) {
     $('#' + listId).append(
         '<div class="translate-input form-group">' +
             '<input type="text" ' +
+                ' id="item_' + listId +'_' + item.item +'"' +
                 ' data-locale="' + item.locale + '" ' +
                 ' class="form-control translate-input-data" '+
                 ' data-id="' + item.id + '" value="' + item.text + '">' +
