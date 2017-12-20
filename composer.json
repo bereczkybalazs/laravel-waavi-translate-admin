@@ -3,7 +3,7 @@
     "type": "package",
     "version": "8.3.2.1",
     "require": {
-        "waavi/translation": "2.2.x",
+        "waavi/translation": "2.x",
         "laravel/framework": "~5.4"
     },
     "minimum-stability" : "dev",
