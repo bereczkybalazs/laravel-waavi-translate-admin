@@ -18,6 +18,14 @@ class TranslationRepository implements TranslationRepositoryInterface
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function showByGroup()
+    {
+        return Translation::orderBy('group', 'ASC')->get();
+    }
+
+    /**
      * @param $id
      * @return \Illuminate\Database\Eloquent\Model|null|static
      */

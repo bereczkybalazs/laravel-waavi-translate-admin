@@ -23,7 +23,7 @@ class TranslateResponseDataTransformer implements ResponseDataTransformerInterfa
     {
         $this->response = new \stdClass();
         $this->response->locales = $this->languagesRepository->show();
-        $this->unformattedTranslates = $this->translateRepository->show();
+        $this->unformattedTranslates = $this->translateRepository->showByGroup();
         $this->transformTranslates();
         return $this;
     }
